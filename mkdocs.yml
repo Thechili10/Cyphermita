@@ -1,0 +1,60 @@
+site_name: Cyphermita
+site_description: From Zero to Cybersecurity — A structured learning roadmap for aspiring security professionals.
+site_author: Cyphermita Team
+site_url: https://yourusername.github.io/cyphermita/
+
+theme:
+  name: material
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - tables
+  - attr_list
+
+nav:
+  - Home: index.md
+  - Roadmap:
+    - Overview: roadmap/index.md
+    - Stage 01 - Computer Fundamentals: roadmap/stage-01-computers.md
+    - Stage 02 - Networking: roadmap/stage-02-networking.md
+  - CTF Practice:
+    - Introduction & Methodology: ctf/methodology.md
+    - Web Exploitation: ctf/web.md
+  - Toolkit:
+    - Overview: tools/index.md
+    - Nmap Guide: tools/nmap.md
+  - Resources: resources/index.md
