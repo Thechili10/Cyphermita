@@ -1,7 +1,11 @@
 site_name: Cyphermita
 site_description: From Zero to Cybersecurity — A structured learning roadmap for aspiring security professionals.
 site_author: Cyphermita Team
+<<<<<<< HEAD
 site_url: https://thechili10.github.io/cyphermita.gihtub.io/
+=======
+site_url: https://thechili10.github.io/cyphermita/
+>>>>>>> c2ab6ee (chenged username)
 
 theme:
   name: material
