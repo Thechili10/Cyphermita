@@ -1,7 +1,6 @@
 site_name: Cyphermita
 site_description: From Zero to Cybersecurity — A structured learning roadmap for aspiring security professionals.
 site_author: Guillermo Torre Perez, Braylen Milstead, and  Alec Tholkes.
-site_url: https://thechili10.github.io/cyphermita/
 
 theme:
   name: material
