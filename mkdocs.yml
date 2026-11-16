@@ -1,73 +1,67 @@
-site_name: Cyphermita
-site_url: https://cyphermita.github.io/
-site_description: Personal documentation, write-ups, and notes.
-site_author: Cyphermita
 
-# Repository link in the header
-repo_url: https://github.com/Cyphermita/Cyphermita.github.io
-repo_name: Cyphermita/Cyphermita.github.io
+site_name: Cyphermita
+site_description: A cybersecurity learning guide covering cybersecurity fundamentals, practical skills, CTFs, tools, and career preparation.
+site_author: The Cyphermita Team
+
+site_url: https://thechili10.github.io/Cyphermita/
+
+repo_url: https://github.com/thechili10/Cyphermita
+repo_name: thechili10/Cyphermita
 
 theme:
   name: material
-  custom_dir: overrides
+  language: en
+
   features:
+    - navigation.instant
     - navigation.tabs
     - navigation.sections
+    - navigation.expand
     - navigation.top
-    - navigation.indexes
     - search.suggest
     - search.highlight
     - content.code.copy
-    - content.code.annotate
+    - content.action.edit
+
   palette:
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: teal
+    - scheme: slate
+      primary: indigo
       accent: cyan
       toggle:
-        icon: material/brightness-4
+        icon: material/weather-sunny
         name: Switch to light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: teal
+
+    - scheme: default
+      primary: indigo
       accent: cyan
       toggle:
-        icon: material/brightness-7
+        icon: material/weather-night
         name: Switch to dark mode
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
 
 extra_css:
   - stylesheets/extra.css
 
 extra_javascript:
-  - javascripts/mathjax.js
-  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/extra.js
 
-# Site Navigation Structure (paths are relative to the docs/ folder)
-nav:
-  - Home: index.md
-  - Projects:
-      - Overview: projects/index.md
-  - Write-ups:
-      - Overview: writeups/index.md
-  - Notes:
-      - Overview: notes/index.md
+copyright: Copyright &copy; 2026 Cyphermita
 
-# Essential Markdown Extensions
-markdown_extensions:
-  - admonition
-  - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.tabbed:
-      alternate_style: true
-  - pymdownx.arithmatex:
-      generic: true
-  - attr_list
-  - toc:
-      permalink: true
-
-# Built-in Plugins
-plugins:
-  - search
+strict: false
