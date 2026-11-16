@@ -1,0 +1,33 @@
+title: Cyphermita
+description: From zero to cybersecurity — a structured learning roadmap for aspiring cybersecurity professionals, ethical hackers, and CTF players.
+url: "https://thechili10.github.io"
+baseurl: "/Cyphermita"
+lang: en
+author: "Guillermo Torre, Alec Tholkes, and Braylen Miltead"
+
+markdown: kramdown
+permalink: pretty
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins: []
+
+exclude:
+  - docs
+  - search
+  - mkdocs.yml
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .github
+  - .nojekyll
+  - node_modules
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

@@ -1,28 +1,50 @@
-
-name: Deploy Cyphermita to GitHub Pages
+name: Build and deploy Cyphermita (Jekyll)
 
 on:
   push:
-    branches:
-      - main
+    branches: [main, migration/jekyll]
+  pull_request:
+    branches: [main]
 
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out repository
+        uses: actions/checkout@v4
 
-      - name: Configure Python
-        uses: actions/setup-python@v5
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          python-version: 3.x
+          ruby-version: "3.3"
+          bundler-cache: true
 
-      - name: Install MkDocs Material
-        run: |
-          pip install mkdocs-material
-      - name: Build and Deploy Site
-        run: |
-          mkdocs gh-deploy --force
+      - name: Build Jekyll site
+        run: bundle exec jekyll build --baseurl "/Cyphermita"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site
+
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
