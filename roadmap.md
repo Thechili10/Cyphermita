@@ -1,4 +1,5 @@
 ---
+searchable: true
 title: Learning Roadmap
 description: Stage 01 of the Cyphermita cybersecurity learning roadmap: computer fundamentals.
 permalink: /roadmap/
