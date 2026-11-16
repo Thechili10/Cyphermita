@@ -1,4 +1,5 @@
 ---
+searchable: true
 title: Home
 description: From zero to cybersecurity. Learn, explore, practice, and build with Cyphermita.
 permalink: /
