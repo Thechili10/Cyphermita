@@ -1,34 +1,34 @@
 :root {
   color-scheme: light;
-  /* ColorHunt palette: Peach · Cream · Powder Blue · Steel Blue */
-  --peach: #F4BAA3;
-  --cream: #F4F0E2;
-  --powder-blue: #A6C8E2;
-  --steel-blue: #619DC6;
-  --ink: #293b49;
-  --bg: var(--cream);
-  --surface: #fffdf7;
-  --surface-2: #e9e6da;
-  --surface-3: #dce8ee;
+  /* ColorHunt palette: Deep Teal · Coral · Soft Coral · Sage */
+  --deep-teal: #194350;
+  --coral: #FF8882;
+  --soft-coral: #FFC2B4;
+  --sage: #9DBEB8;
+  --ink: var(--deep-teal);
+  --bg: #F5F8F7;
+  --surface: #FFFFFF;
+  --surface-2: #EAF1EF;
+  --surface-3: #DCE9E6;
   --text: var(--ink);
-  --muted: #596b78;
-  --line: rgba(41, 59, 73, .16);
-  --accent: #477fa5;
-  --accent-2: #d58f78;
-  --shadow: 0 24px 70px rgba(41, 59, 73, .10);
+  --muted: #526D69;
+  --line: rgba(25, 67, 80, .16);
+  --accent: var(--deep-teal);
+  --accent-2: var(--coral);
+  --shadow: 0 24px 70px rgba(25, 67, 80, .10);
   --max: 1180px;
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #243746;
-  --surface: #2d4353;
-  --surface-2: #354f61;
-  --surface-3: #405f73;
-  --text: var(--cream);
-  --muted: #d2dce1;
-  --line: rgba(244, 240, 226, .17);
-  --accent: var(--powder-blue);
-  --accent-2: var(--peach);
+  --bg: #102D35;
+  --surface: #194350;
+  --surface-2: #23545D;
+  --surface-3: #32656B;
+  --text: #F5F8F7;
+  --muted: #C4D8D3;
+  --line: rgba(245, 248, 247, .17);
+  --accent: var(--soft-coral);
+  --accent-2: var(--coral);
   --shadow: 0 24px 70px rgba(0, 0, 0, .24);
 }
 * { box-sizing: border-box; }
@@ -36,7 +36,7 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background:
-    radial-gradient(ellipse at 70% -15%, color-mix(in srgb, var(--powder-blue) 48%, transparent), transparent 42%),
+    radial-gradient(ellipse at 70% -15%, color-mix(in srgb, var(--sage) 48%, transparent), transparent 42%),
     var(--bg);
   color: var(--text);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -55,7 +55,7 @@ button, input { font: inherit; }
 .header-inner { max-width: var(--max); min-height: 76px; margin: auto; padding: 0 28px; display: flex; align-items: center; gap: 34px; }
 .brand { display: inline-flex; align-items: center; gap: 11px; color: var(--text); font-weight: 800; font-size: 1.08rem; letter-spacing: -.04em; white-space: nowrap; }
 .brand:hover { text-decoration: none; }
-.brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; color: var(--ink); background: var(--peach); font-weight: 900; font-size: 1.1rem; }
+.brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; color: var(--ink); background: var(--coral); font-weight: 900; font-size: 1.1rem; }
 .primary-navigation { display: flex; align-items: center; gap: 24px; }
 .primary-navigation a { color: var(--muted); font-size: .9rem; font-weight: 600; }
 .primary-navigation a[aria-current="page"], .primary-navigation a:hover { color: var(--text); text-decoration: none; }
@@ -100,9 +100,9 @@ button, input { font: inherit; }
 .prose hr { margin: 36px 0; border: 0; border-top: 1px solid var(--line); }
 .prose blockquote { margin: 24px 0; padding: 14px 20px; border-left: 3px solid var(--accent); border-radius: 0 9px 9px 0; background: var(--surface); color: var(--text); }
 .prose code { padding: .16em .4em; border: 1px solid var(--line); border-radius: 5px; background: var(--surface-2); color: var(--accent); font-size: .88em; }
-.prose pre { overflow-x: auto; padding: 18px; border: 1px solid var(--line); border-radius: 12px; background: #263b4b; color: var(--cream); }
+.prose pre { overflow-x: auto; padding: 18px; border: 1px solid var(--line); border-radius: 12px; background: #12343D; color: #F5F8F7; }
 .prose pre code { padding: 0; border: 0; background: transparent; color: inherit; }
-.hero { position: relative; overflow: hidden; padding: clamp(30px, 6vw, 64px); border: 1px solid var(--line); border-radius: 22px; background: linear-gradient(135deg, var(--surface), color-mix(in srgb, var(--surface-2) 78%, var(--powder-blue))); box-shadow: var(--shadow); }
+.hero { position: relative; overflow: hidden; padding: clamp(30px, 6vw, 64px); border: 1px solid var(--line); border-radius: 22px; background: linear-gradient(135deg, var(--surface), color-mix(in srgb, var(--surface-2) 78%, var(--sage))); box-shadow: var(--shadow); }
 .hero::after { content: ""; position: absolute; width: 300px; height: 300px; right: -130px; top: -150px; border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent); border-radius: 50%; box-shadow: 0 0 0 35px color-mix(in srgb, var(--accent) 4%, transparent), 0 0 0 70px color-mix(in srgb, var(--accent) 3%, transparent); pointer-events: none; }
 .hero .eyebrow { display: flex; align-items: center; gap: 9px; }
 .hero h1 { max-width: 700px; margin: 24px 0 18px; font-size: clamp(3rem, 7vw, 5.5rem); line-height: .99; letter-spacing: -.075em; }
