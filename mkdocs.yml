@@ -1,0 +1,73 @@
+site_name: Cyphermita
+site_url: https://cyphermita.github.io/
+site_description: Personal documentation, write-ups, and notes.
+site_author: Cyphermita
+
+# Repository link in the header
+repo_url: https://github.com/Cyphermita/Cyphermita.github.io
+repo_name: Cyphermita/Cyphermita.github.io
+
+theme:
+  name: material
+  custom_dir: overrides
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+# Site Navigation Structure (paths are relative to the docs/ folder)
+nav:
+  - Home: index.md
+  - Projects:
+      - Overview: projects/index.md
+  - Write-ups:
+      - Overview: writeups/index.md
+  - Notes:
+      - Overview: notes/index.md
+
+# Essential Markdown Extensions
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
+  - attr_list
+  - toc:
+      permalink: true
+
+# Built-in Plugins
+plugins:
+  - search
