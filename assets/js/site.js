@@ -9,8 +9,10 @@
   const savedTheme = localStorage.getItem("cyphermita-theme");
   if (savedTheme === "light" || savedTheme === "dark") {
     root.dataset.theme = savedTheme;
-  } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
-    root.dataset.theme = "light";
+  } else {
+    root.dataset.theme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
   }
 
   if (themeButton) {
